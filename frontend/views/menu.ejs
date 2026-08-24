@@ -1,0 +1,82 @@
+<!-- Menu EJS Template - Customer Menu Data Fetching -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/frontend/modules/shared/global.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+    rel="stylesheet">
+  <title>
+    <%= title %>
+  </title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-header">
+      <h2>
+        Smart Menu
+      </h2>
+    </div>
+    <div class="nav-link">
+      <a href='/'">Menu</a>
+        <a href = '/frontend/modules/menu_manager/manager.html'">Manager</a>
+      <a href='/frontend/modules/vibeslab_portal/panel.html'">Panel</a>
+      </div>
+      </nav>
+    <div style=" padding: 20px">
+        <h1>
+          <%= title + " Menu" %>
+        </h1>
+        <div style="padding: 20px;">
+          <div style="display: flex; gap: 20px;">
+            <aside>
+              <h3>Filter by Category</h3>
+              <ul>
+                <% for (let categoryName in groupedMenu) { %>
+                  <li><a href="#<%= categoryName %>">
+                      <%= categoryName %>
+                    </a></li>
+                  <% } %>
+              </ul>
+            </aside>
+
+            <%for (let categoryName in groupedMenu){ %>
+              <section class="menu-category">
+                <h2>
+                  <%= categoryName %>
+                </h2>
+                <hr>
+                <div class="meal-container">
+                  <% groupedMenu[categoryName].forEach(meal=>{%>
+                    <div class="meal-card">
+                      <h3>
+                        <%= meal.meal_name %>
+                      </h3>
+                      <p>
+                        <%= meal.meal_description %>
+                      </p>
+                      <p>Size: <%= meal.meal_size %>
+                      </p>
+                      <p>Price: $<%= meal.meal_price.toFixed(2) %>
+                      </p>
+                    </div>
+                    <% }) %>
+                </div>
+                <% } %>
+                  <% if (Object.keys(groupedMenu).length===0) { %>
+                    <p>No meals available.</p>
+                    <% } %>
+          </div>
+        </div>
+    </div>
+</body>
+
+</html>

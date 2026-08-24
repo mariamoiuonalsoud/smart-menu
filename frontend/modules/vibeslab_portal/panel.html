@@ -1,0 +1,81 @@
+<!-- Panel UI - - adding categories, meals, and meal details -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Panel</title>
+    <link rel="stylesheet" href="/frontend/modules/shared/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-header">
+        <h2>Smart Menu</h2>
+      </div>
+      <div class="nav-link">
+        <a href="/">Menu</a>
+        <a href="/frontend/modules/menu_manager/manager.html">Manager</a>
+        <a href="/frontend/modules/vibeslab_portal/panel.html"> Panel </a>
+      </div>
+    </nav>
+    <div style="padding: 20px" class="menu-inputs">
+      <h1>Custome Menu</h1>
+      <div style="padding: 20px">
+        <form action="/" method="post">
+          <h3>Meal Category</h3>
+          <input name="category" type="text" placeholder="Category" />
+          <h3>Meal Name</h3>
+          <input name="meal_name" type="text" placeholder="Name" />
+          <br />
+          <br />
+
+          <h3>Meal Description</h3>
+          <textarea
+            name="meal_description"
+            type="textarea"
+            placeholder="Description"
+          ></textarea>
+          <br />
+          <h3>Meal Size</h3>
+          <input
+            list="sizes"
+            name="meal_size"
+            placeholder="Select Meal Size.."
+          />
+          <datalist id="sizes">
+            <option value="Small"></option>
+            <option value="Regular"></option>
+            <option value="Medium"></option>
+            <option value="Large"></option>
+            <option value="Extra Large"></option>
+          </datalist>
+          <br />
+          <h3>Meal Price</h3>
+          <input
+            name="meal_price"
+            type="text"
+            inputmode="numeric"
+            placeholder="Price"
+          />
+          <br />
+          <br />
+
+          <button class="button">Send to Database</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

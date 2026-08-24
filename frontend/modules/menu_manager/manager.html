@@ -1,1 +1,61 @@
-<!-- Manager UI - adding categories, meals, and meal details -->
+<!-- Manager UI - editing meal's name, price, and description -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager</title>
+    <link rel="stylesheet" href="/frontend/modules/shared/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-header">
+        <h2>Smart Menu</h2>
+      </div>
+      <div class="nav-link">
+        <a href="/">Menu</a>
+        <a href="/frontend/modules/menu_manager/manager.html"> Manager </a>
+        <a href="/frontend/modules/vibeslab_portal/panel.html"> Panel </a>
+      </div>
+    </nav>
+    <div style="padding: 20px">
+      <h1>Menu Management Dashboard</h1>
+    </div>
+
+    <hr />
+    <div style="padding: 20px">
+      <h2>Menu List</h2>
+
+      <div id="loading">Loading Meals...</div>
+      <table border="1" id="menu-table" style="display: none">
+        <thead>
+          <tr>
+            <th>Meal Name</th>
+            <th>Meal Description</th>
+            <th>Meal Size</th>
+            <th>Meal Price</th>
+            <th>Meal Status</th>
+            <th>Meal Procedures</th>
+          </tr>
+        </thead>
+        <tbody id="items-body">
+          <!-- Meals Will Downloaded here-->
+        </tbody>
+      </table>
+    </div>
+    <script src="/frontend/modules/menu_manager/manager.js"></script>
+  </body>
+</html>
